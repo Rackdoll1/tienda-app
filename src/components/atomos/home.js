@@ -3,7 +3,7 @@ import { useState } from "react";
 const Home = ({data}) => {
   const [searchString, setSearchString] = useState("");
 
-  // Function to map each item info received in "data" to a rendering format.
+  // Array to store each item info received in "data" with its corresponding rendering format.
   const items = data.map((item, index) => {
     return (
       // React pide que elementos creados en una función map() tengan una
