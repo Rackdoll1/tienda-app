@@ -1,6 +1,5 @@
 
-
-.container{position: fixed;
+.container{
     top: 15%;
     left: 19%;
     display: flex;
@@ -12,7 +11,7 @@
     width: 80%;
     height: 70%;
     overflow: hidden;
-    overflow-y:scroll; 
+    overflow-y:scroll;
     background-color: lightgray;
     border-radius: 20px;
 }
