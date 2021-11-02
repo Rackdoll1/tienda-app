@@ -1,38 +1,83 @@
+/* atomos: estilos de boton (input, tamaño de letra,logo) */
+/* moleculas estrcura general de navbar */
+/* organismos: body , media queries */
 .App {
-  text-align: center;
+  width: 100vw;
+  height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+
+body {
+  margin:0;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.Navbar{
+  background-color: black;
+  width:100%;
+  height: 60px;
   display: flex;
-  flex-direction: column;
+  
+}
+
+.navbutton {
+  cursor: pointer;
+  height: 30px;
+}
+
+.navsize {
+  width: 600px;
+  height: 25px;
+  border-radius: 5px;
+}
+
+.alinear {
+  display: flex;
+  width:100%;
+}
+
+.alinear .left {
+  flex:90%;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+ 
+  /* background-color: tomato; */
+}
+
+.searchbar {
+  margin-left: 10%;
+  
+}
+
+.alinear .left a {
+  text-decoration: none;
   color: white;
+  font-size: 25px;
 }
 
-.App-link {
-  color: #61dafb;
+
+
+.alinear .right {
+  display: flex;
+  align-items: center;
+  flex:30%;
+  /* background-color: turquoise; */
+    justify-content: space-around;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.alinear .right a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+
+
+}
+
+ul {
+   list-style-type: none;
+}
+
+h3 {
+  margin-left: 1%;
 }
