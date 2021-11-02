@@ -13,21 +13,23 @@ import '../src/App.css'
 
 function App() {
   return (
-    <Router>
-      <Navbar />
-      {/* exact especificamente */}
-      <Route exact path="/">
-        <h3>Info de home</h3>
-      </Route>
-      <Route exact path="/login">
-        <Login></Login>
-      </Route>
-      <Route exact path="/signup">
-        <Signup></Signup>
-      </Route>
+    <>
+      <Router>
+        <Navbar />
+        {/* exact especificamente */}
+        <Route exact path="/">
+          <h3>Info de home</h3>
+        </Route>
+        <Route exact path="/login">
+          <Login></Login>
+        </Route>
+        <Route exact path="/signup">
+          <Signup></Signup>
+        </Route>
 
-    </Router>
-    <Home />
+      </Router>
+      <Home />
+    </>
   );
 }
 
