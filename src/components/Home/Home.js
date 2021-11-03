@@ -1,13 +1,13 @@
 import React,{useEffect,useState} from "react"
 import Card from "../Card/Card"
 import withItemsHome from "../Hoc/withItemsHome"
-const Home=(data)=>{
+const Home=({data})=>{
   // const[image,setImage]=useState("")
   // const[product_name,setProduct_name]=useState("")
   // const[price,setPrice]=useState("")
   // const[brand,setBrand]=useState("")
   // const[category,setCategory]=useState("")
-  let homeData= data.data
+  // let homeData= data.data
 
   // const cards=()=>{
   //     if(homeData.length===20){
@@ -22,7 +22,7 @@ const Home=(data)=>{
   //   }
   // }
 
-  const cards = homeData.map((item, index) => {
+  const cards = data.map((item) => {
     return (
         <Card
           image={item?.image}
@@ -32,6 +32,9 @@ const Home=(data)=>{
           category={item?.category}
       />)
   });
+
+  const cardsFiltered = cards.filter((e, i) => cards.indexOf(e) === i);
+  console.log(cardsFiltered);
 
   // const ConstructCard=()=>{
   //     return(
@@ -45,6 +48,7 @@ const Home=(data)=>{
   //         />
   //     )
   // }
+
 //   useEffect(()=>{
 //   ConstructCard()
 // },[image])
@@ -52,7 +56,7 @@ const Home=(data)=>{
       return(
        <>
          <div id="container" className="container">
-                {cards}
+                {cardsFiltered}
          </div>
        </>
       )
