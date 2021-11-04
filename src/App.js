@@ -7,6 +7,7 @@ import Navbar from './components/Navbar/Navbar'
 import Login from './components/Login/Login';
 import Signup from './components/Signup/Signup';
 import Home from './components/Home/Home';
+import SearchResult from './components/SearchResult/SearchResult';
 // styles
 import "./styles/organismos/organismos.scss";
 import "./App.css";
@@ -21,6 +22,9 @@ function App() {
             {/* exact especificamente */}
             <Route exact path="/">
               <Home />
+            </Route>
+            <Route exact path="/searchResult">
+              <SearchResult />
             </Route>
             <Route exact path="/login">
               <Login />
