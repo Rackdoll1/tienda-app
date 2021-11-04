@@ -2,6 +2,7 @@
 
 import { BrowserRouter as Router, Route } from "react-router-dom"
 // importamos Navbar
+import Provider from './services/resultadosBusqueda';
 import Navbar from './components/Navbar/Navbar'
 import Login from './components/Login/Login';
 import Signup from './components/Signup/Signup';
@@ -14,21 +15,21 @@ import "./App.css";
 function App() {
   return (
     <>
-      <Router>
-        <Navbar />
-        {/* exact especificamente */}
-        <Route exact path="/">
-          <h3>Info de home</h3>
-        </Route>
-        <Route exact path="/login">
-          <Login></Login>
-        </Route>
-        <Route exact path="/signup">
-          <Signup></Signup>
-        </Route>
-
-      </Router>
-      <Home />
+      <Provider>
+        <Router>
+            <Navbar />
+            {/* exact especificamente */}
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route exact path="/login">
+              <Login />
+            </Route>
+            <Route exact path="/signup">
+              <Signup />
+            </Route>
+        </Router>
+      </Provider>
     </>
   );
 }

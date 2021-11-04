@@ -1,6 +1,6 @@
-import React,{useEffect,useState} from "react"
 import Card from "../Card/Card"
-import withItemsHome from "../Hoc/withItemsHome"
+import withItemsData from "../../services/withItemsData";
+
 const Home=({data})=>{
   // const[image,setImage]=useState("")
   // const[product_name,setProduct_name]=useState("")
@@ -63,4 +63,4 @@ const Home=({data})=>{
 
 }
 
-export default withItemsHome(Home, String("https://ecomerce-master.herokuapp.com/api/v1/item"));
+export default withItemsData(Home, String("https://ecomerce-master.herokuapp.com/api/v1/item"));

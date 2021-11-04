@@ -14,9 +14,9 @@ const Login = () => {
     const [user, setUser] = useState({ name: "", email: "" })
     const [error, setError] = useState("")
 
-    // were gonna pass details 
+    // were gonna pass details
     const Login = details => {
-        console.log(details)
+        console.log(details.email)
     }
 
     const Logout = () => {
