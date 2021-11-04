@@ -1,51 +1,9 @@
+import React from "react";
+import '../../../src/App.css'
 import { Link } from "react-router-dom";
-import { useState, useContext } from "react";
-import { AppContext} from "../../services/resultadosBusqueda";
 
-import withItemsData from "../../services/withItemsData";
 
-const Navbar = ({data}) => {
-
-  const [state, setState] = useContext(AppContext);
-  const [userInput, setUserInput] = useState("");
-
-  /**
-  * Capitalizes each word of a string, so its format is recognizable by the search filter.
-  * @param {String} stringToFormat - The string to be formatted.
-  * @return {String}               - The formatted string
-  */
-  const formatString = (stringToFormat) => {
-    const words = stringToFormat.toLowerCase().split(" ");
-
-    const wordsFormatted = words.map(word => {
-      return word.charAt(0).toUpperCase() + word.substring(1);
-    }).join(" ");
-
-    return wordsFormatted;
-  }
-
-  /**
-  * Filters products which include the given string on their name.
-  * @param {String}     - The string to search and filter items with.
-  * @return {[Object]}  - An array of items that matched the given string
-  */
-  const filterSearch = (stringToFilter) => {
-    const filteredItems = data.filter(item => {
-      return item.product_name.includes(stringToFilter);
-    });
-    return filteredItems;
-  }
-
-  const handleInput = (e) => {
-    e.preventDefault();
-    setUserInput(e.target.value);
-  }
-
-  const handleClick = (e) => {
-    e.preventDefault();
-    setState(filterSearch(formatString(userInput)));
-
-  };
+const Navbar = () => {
 
     return (
         <>
@@ -57,9 +15,8 @@ const Navbar = ({data}) => {
                             <Link to="/" className="hm"> Home</Link>
                         </li>
                         <div className="searchbar">
-                            <input
-                              type="text" className="navsize" placeholder="Search..." onChange={handleInput} />
-                            <button className="navbutton" onClick={handleClick} >Search</button>
+                            <input type="text" className="navsize" placeholder="Search..." />
+                            <button className="navbutton">Search</button>
                         </div>
                     </div>
 
@@ -78,4 +35,4 @@ const Navbar = ({data}) => {
     )
 }
 
-export default withItemsData(Navbar, String("https://ecomerce-master.herokuapp.com/api/v1/item"));
+export default Navbar

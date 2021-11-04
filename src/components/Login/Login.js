@@ -16,7 +16,7 @@ const Login = () => {
 
     // were gonna pass details
     const Login = details => {
-        console.log(details.email)
+        console.log(details)
     }
 
     const Logout = () => {
