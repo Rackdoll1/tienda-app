@@ -26,6 +26,13 @@ const Navbar = ({data}) => {
     const filteredItems = data.filter(item => {
       return item.product_name.includes(stringToFilter);
     });
+    const unique = [];
+    const filteredItemsUnique = filteredItems.filter( (item) => {
+        if(!unique.includes(item.sku)) {
+          unique.push(item.sku);
+          return item;
+        }
+      });
     return filteredItems;
   }
 
@@ -42,11 +49,11 @@ const Navbar = ({data}) => {
   //   setState(filterSearch(userSearchInput));
   // }
 
-  const handleFocus = (e) => {
-    e.preventDefault();
-    e.target.value = "";
-    setState([]);
-  }
+  // const handleFocus = (e) => {
+  //   e.preventDefault();
+  //   e.target.value = "";
+  //   setState([]);
+  // }
 
 
     return (
@@ -60,7 +67,7 @@ const Navbar = ({data}) => {
                         </li>
                         <div className="searchbar">
                             <input type="text" className="navsize" placeholder="Search..." onChange={handleInput}
-                              onFocus={handleFocus} />
+                               />
                             <Link to="/searchResult">
                               <button type="button" className="navbutton" >Search</button>
                             </Link>
