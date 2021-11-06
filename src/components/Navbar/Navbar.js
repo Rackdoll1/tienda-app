@@ -3,7 +3,7 @@ import { AppContext } from "../../services/resultadosBusqueda";
 import { Link } from "react-router-dom";
 
 import withItemsData from "../../services/withItemsData";
-
+import cart from "../../assets/cart.png";
 
 const Navbar = ({data}) => {
 
@@ -81,6 +81,11 @@ const Navbar = ({data}) => {
 
                         <li>
                             <Link to="/signup" className="sign"> Sign Up</Link>
+                        </li>
+                        <li>
+                            <Link to="/cart" >
+                              <img src={cart} alt="cart" className="cart"></img>
+                            </Link>
                         </li>
                     </div>
                 </ul>

@@ -25,11 +25,11 @@
 }
 
 .alinear .left {
-  flex:90%;
+  flex: 80%;
   display: flex;
   align-items: center;
 
-  /* background-color: tomato; */
+   // background-color: tomato;
 }
 
 .searchbar {
@@ -48,9 +48,8 @@
 .alinear .right {
   display: flex;
   align-items: center;
-  flex:30%;
-  /* background-color: turquoise; */
-    justify-content: space-around;
+  flex: 20%;
+   // background-color: turquoise;
 }
 
 .alinear .right a {
@@ -58,11 +57,18 @@
   color: white;
   font-size: 20px;
 
+.cart {
+  width: 50%;
+}
 
 }
 
 ul {
    list-style-type: none;
+}
+
+li{
+  width: 100px;
 }
 
 h3 {

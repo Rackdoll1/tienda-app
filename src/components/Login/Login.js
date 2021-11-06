@@ -1,23 +1,17 @@
-import { useState, useEffect } from 'react'
-import axios from 'axios'
+import { useState } from 'react'
+import { fetchUserToken } from "../../services/fetchToken";
 import LoginForm from './LoginForm'
 
 const Login = () => {
-
 
     const adminUser = {
         email: "admin@admin.com",
         password: "admin"
     }
 
-
     const [user, setUser] = useState({ name: "", email: "" })
     const [error, setError] = useState("")
 
-    // were gonna pass details
-    const Login = details => {
-        console.log(details.email)
-    }
 
     const Logout = () => {
         console.log("Logout")
