@@ -9,11 +9,10 @@ const Home=({data})=>{
        <>
          <div id="container" className="container">
              {
-                 data.map((card)=>{
+                 data.map((card, index)=>{
                     return(
-                      // <div key={`${index}${card.product_name}`}>
-                        <Card item={card} />
-                     // </div>
+                        <Card item={card} key={`${card.product_name}${index}`}/>
+
                     )
                 })
              }

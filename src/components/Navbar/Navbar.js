@@ -29,13 +29,6 @@ const Navbar = ({data}) => {
       return item.product_name.includes(stringToFilter);
     });
 
-    const unique = [];
-    const filteredItemsUnique = filteredItems.filter( (item) => {
-        if(!unique.includes(item.s)) {
-          unique.push(item.sku);
-          return item;
-        }
-      });
     return filteredItems;
   }
 
@@ -52,16 +45,6 @@ const Navbar = ({data}) => {
     setUser(null);
   }
 
-  // const handleClick = (e) => {
-  //   e.preventDefault();
-  //   setState(filterSearch(userSearchInput));
-  // }
-
-  // const handleFocus = (e) => {
-  //   e.preventDefault();
-  //   e.target.value = "";
-  //   setState([]);
-  // }
 
 
     return (
@@ -71,33 +54,34 @@ const Navbar = ({data}) => {
 
                     <div className="left">
                         <li>
-                            <Link to="/" className="hm"> Home</Link>
+                            <Link to="/" className="hm" >Home</Link>
                         </li>
-                        <div className="searchbar">
-                            <input type="text" className="navsize" placeholder="Search..." onChange={handleInput}
-                               />
-                            <Link to="/searchResult">
-                              <button type="button" className="navbutton" >Search</button>
-                            </Link>
-                        </div>
+                    </div>
+
+                    <div className="center">
+                          <input type="text" className="navsize" placeholder="Search..." onChange={handleInput}
+                             />
+                           <Link to="/searchResult" exact>
+                            <button type="button" className="navbutton" >Search</button>
+                          </Link>
                     </div>
 
                     <div className="right">
                         <li>
                             {user ?
                               <h3>{`Bienvenido ${user.first_name} ${user.last_name}`}</h3>
-                              :<Link to="/login" className="log"> Log In</Link>
+                              :<Link to="/login" className="log" exact> Log In</Link>
                             }
                         </li>
 
                         <li>
                           {user ?
                             <button type="button" onClick={handleLogOut}>Logout</button>
-                            :<Link to="/signup" className="sign"> Sign Up</Link>
+                            :<Link to="/signup" className="sign" exact> Sign Up</Link>
                             }
                         </li>
                         <li>
-                            <Link to="/cart" >
+                            <Link to="/cart" exact>
                               <img src={cart} alt="cart" className="cart"></img>
                             </Link>
                         </li>

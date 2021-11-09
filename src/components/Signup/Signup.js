@@ -75,7 +75,7 @@ const Signup = () => {
                 </div>
                 <div className="form-group">
                     <label htmlFor="password"> Password:</label>
-                    <input type="password" name="password" id="password" onChange={handleInput} required/>
+                    <input type="password" name="password" id="password" onChange={handleInput} required autoComplete="off"/>
                 </div>
             <input type="submit" value="Sign Up"></input>
           </form>
