@@ -1,10 +1,10 @@
-// HOC para pasarle info de productos al home
+// HOC para pasar info de productos
 
 import { useState, useEffect} from 'react';
 import axios from 'axios';
 
 // función que recibe el componente al que se le pasará la info (y sus props) y una url
-const withItemsHome = (WrappedComponent, requestUrl) => props => {
+const withItemsData = (WrappedComponent, requestUrl) => props => {
 
       // guarda la info del request
       const [data, setData] = useState([]);
@@ -26,11 +26,10 @@ const withItemsHome = (WrappedComponent, requestUrl) => props => {
         try {
           await axios.get(url)
             .then(response => {
-              // se puede eliminar este for para guardar todos los items
-              for(let i = 0; i < response.lenght; i++){
-                setData(data => [...data, response.data[i]])
-              };
-              // setData(response.data);
+              // for(let i = 0; i < 20; i++){
+              //   setData(data => [...data, response.data[i]])
+              // };
+              setData(response.data);
             });
         }
         catch(err) {
@@ -53,4 +52,4 @@ const withItemsHome = (WrappedComponent, requestUrl) => props => {
 
   }
 
-export default withItemsHome;
+export default withItemsData;
