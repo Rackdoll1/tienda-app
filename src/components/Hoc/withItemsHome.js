@@ -27,7 +27,7 @@ const withItemsHome = (WrappedComponent, requestUrl) => props => {
           await axios.get(url)
             .then(response => {
               // se puede eliminar este for para guardar todos los items
-              for(let i = 0; i < 20; i++){
+              for(let i = 0; i < response.lenght; i++){
                 setData(data => [...data, response.data[i]])
               };
               // setData(response.data);

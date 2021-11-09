@@ -10,9 +10,25 @@ const Home=({data})=>{
          <div id="container" className="container">
              {
                  data.map((card, index)=>{
-                    return(
-                        <Card item={card} key={`${card.product_name}${index}`}/>
 
+                   // return(
+                   //     <Card item={card} key={`${card.product_name}${index}`}/>
+
+                   if(!card.image){card.image="https://chim-chimneyinc.com/wp-content/uploads/2019/12/GettyImages-1128826884.jpg"}
+                    return(
+                      // <div key={`${index}${card.product_name}`}>
+
+                        <Card
+                        id={card.sku}
+                        key={card.sku}
+                        image={card.image}
+                        product_name={card.product_name}
+                        price={card.price}
+                        brand={card.brand}
+                        category={card.category}
+                        Data={[card.sku,card.image,card.product_name,card.price,card.brand,card.category]}
+                        />
+                     // </div>
                     )
                 })
              }

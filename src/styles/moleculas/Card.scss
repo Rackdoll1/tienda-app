@@ -1,4 +1,4 @@
-.card {
+.card {position: relative;
     .image{
         position:relative;
         top: 1%;
@@ -29,6 +29,23 @@
     transform: scale(1.10);
 }
 
-.card:active{
-   transform: scale(1);
+.cardButton{position:absolute;
+    border-radius:5px ;
+    border:none;
+    box-shadow: 2px 2px 2px black;
+    background-color:#49be25;
+bottom: 5%;
+left:70% ;
+width: 25%;
+height: 5%;
+}
+.cardButton:hover{
+  cursor: pointer;
+  background-color: lightgreen;
+}
+
+.cardButton:active{
+    background-color: green;
+    box-shadow: 0px 0px 0px;
+    border: 1px solid;
 }
