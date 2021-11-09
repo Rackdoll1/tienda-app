@@ -11,18 +11,10 @@ const SearchResult = () => {
     <>
       <div id="container" className="container">
           {
-              state.map((card, index)=>{
+              state.map((card)=>{
                  return(
                    // <div key={`${index}${card.product_name}`}>
-                     <Card
-                     id={card.product_name}
-                     key={card.id}
-                     image={card.image}
-                     product_name={card.product_name}
-                     price={card.price}
-                     brand={card.brand}
-                     category={card.category}
-                     />
+                     <Card item={card} />
                   // </div>
                  )
              })

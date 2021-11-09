@@ -26,9 +26,10 @@ const Navbar = ({data}) => {
     const filteredItems = data.filter(item => {
       return item.product_name.includes(stringToFilter);
     });
+
     const unique = [];
     const filteredItemsUnique = filteredItems.filter( (item) => {
-        if(!unique.includes(item.sku)) {
+        if(!unique.includes(item.s)) {
           unique.push(item.sku);
           return item;
         }

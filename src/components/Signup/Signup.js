@@ -35,9 +35,9 @@ const Signup = () => {
     }
   }
 
-  useEffect(() => {
-    console.log(json);
-  }, [json])
+  // useEffect(() => {
+  //   console.log(json);
+  // }, [json])
 
   return (
 

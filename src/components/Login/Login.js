@@ -1,35 +1,48 @@
-import { useState } from 'react'
-import { fetchUserToken } from "../../services/fetchToken";
-import LoginForm from './LoginForm'
+import React, { useState } from 'react'
+import style from '../../styles/atomos/atomos.scss'
+function Login({ Login, error }) {
 
-const Login = () => {
+    const [details, setDetails] = useState({ email: "", password: "" })
 
-    const adminUser = {
-        email: "admin@admin.com",
-        password: "admin"
+    const submitHandler = e => {
+        e.preventDefault()
+        console.log(details);
     }
 
-    const [user, setUser] = useState({ name: "", email: "" })
-    const [error, setError] = useState("")
-
-
-    const Logout = () => {
-        console.log("Logout")
+    const inputChange = (e) => {
+      setDetails({
+        ...details,
+        [e.target.name]: e.target.value
+      })
     }
+
+    // const emailChange = (e) => {
+    //     setDetails({ ...details, email: e.target.value })
+    //     //console.log({...details}) es lo que se va concatenando para formar el mail
+    //
+    // }
+    //
+    // const passChange = (e) => {
+    //     setDetails({ ...details, password: e.target.value })
+    //     //console.log({ ...details })
+    // }
+
+
     return (
-        <div>
-            {(user.email != "") ? (
-                <div>
-                    <h2>Welcome, <span>{user.name}</span></h2>
-                    <button>Logout</button>
+        <form onSubmit={submitHandler}>
+            <div className="form-inner">
+                <h2>Login</h2>
+                <div className="form-group">
+                    <label htmlFor="email"> Email:</label>
+                    <input type="email" name="email" id="email" onChange={inputChange} required/>
                 </div>
-
-            ) : <LoginForm Login={Login} error={error}></LoginForm>}
-
-        </div>
-
-
-
+                <div className="form-group">
+                    <label htmlFor="password"> Password:</label>
+                    <input type="password" name="password" id="password" onChange={inputChange} required/>
+                </div>
+            </div>
+            <input type="submit" value="LOGIN"></input>
+        </form>
     )
 }
 
