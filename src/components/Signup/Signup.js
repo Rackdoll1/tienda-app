@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from 'react';
-import { UserContext } from "../../services/usuarioSesionIniciada";
+import { UserContext } from "../../services/userContext";
 
 import axios from 'axios'
 
@@ -35,9 +35,6 @@ const Signup = () => {
     }
   }
 
-  // useEffect(() => {
-  //   console.log(json);
-  // }, [json])
 
   return (
 

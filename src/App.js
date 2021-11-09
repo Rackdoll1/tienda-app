@@ -2,7 +2,7 @@
 
 import { BrowserRouter as Router, Route } from "react-router-dom"
 // importamos Navbar
-import UserProvider from "./services/usuarioSesionIniciada";
+import UserProvider from "./services/userContext";
 import SearchProvider from './services/resultadosBusqueda';
 import Navbar from './components/Navbar/Navbar'
 import Login from './components/Login/Login';

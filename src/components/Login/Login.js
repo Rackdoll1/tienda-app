@@ -1,12 +1,24 @@
-import React, { useState } from 'react'
-import style from '../../styles/atomos/atomos.scss'
-function Login({ Login, error }) {
+import { useState, useContext } from 'react';
+import { useHistory } from 'react-router-dom'
+import { UserContext } from "../../services/userContext";
+import axios from "axios";
 
-    const [details, setDetails] = useState({ email: "", password: "" })
+function Login() {
+
+    const URL_GETUSER = "https://ecomerce-master.herokuapp.com/api/v1/user/me";
+    const URL_POST = "https://ecomerce-master.herokuapp.com/api/v1/login";
+    const history = useHistory();
+    const [details, setDetails] = useState({ email: "", password: "" });
+    const [postResponse, setPostResponse] = useState({});
+    const [user, setUser] = useContext(UserContext);
+    const [error, setError] = useState(false);
 
     const submitHandler = e => {
         e.preventDefault()
-        console.log(details);
+        login()
+        .then(letMeIn());
+        console.log(user);
+
     }
 
     const inputChange = (e) => {
@@ -16,19 +28,45 @@ function Login({ Login, error }) {
       })
     }
 
-    // const emailChange = (e) => {
-    //     setDetails({ ...details, email: e.target.value })
-    //     //console.log({...details}) es lo que se va concatenando para formar el mail
-    //
-    // }
-    //
-    // const passChange = (e) => {
-    //     setDetails({ ...details, password: e.target.value })
-    //     //console.log({ ...details })
-    // }
+    const login = async () => {
+      setError(false);
+      try {
+        await axios.post(URL_POST, details)
+        .then(response => {
+          setPostResponse(response.data.token);
+        });
+
+        // console.log(response.data);
+      }
+      catch {
+        setError(true);
+      }
+    }
+
+    const letMeIn = async () => {
+      try {
+        await axios.get(URL_GETUSER, {
+          headers: {
+            // Authorization: `JWT ${token}`,
+            Authorization: `JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxODk3MjAxNDIyNGQ1MDAxNzI3OGNkYyIsInJvbGUiOiJDVVNUT01FUiIsImV4cCI6MTYzNjQ4NDYyOSwiaWF0IjoxNjM2Mzk4MjI5fQ.nBSpouiZQQMUnAM-kpCkFpQc8_iU04U6cnZO-svaeRg`
+          },
+        })
+        .then(response => {
+          setUser(response.data.user);
+        });
+      }
+      catch(err) {
+        console.log(err);
+      }
+
+      history.push("/");
+    }
+
+
 
 
     return (
+      <>
         <form onSubmit={submitHandler}>
             <div className="form-inner">
                 <h2>Login</h2>
@@ -43,6 +81,10 @@ function Login({ Login, error }) {
             </div>
             <input type="submit" value="LOGIN"></input>
         </form>
+        {error ?
+        <h2>El correo o la contraseña son incorrectos. Intente de nuevo</h2>
+        : null}
+    </>
     )
 }
 

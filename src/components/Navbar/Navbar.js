@@ -1,5 +1,6 @@
 import { useState, useContext } from "react";
 import { AppContext } from "../../services/resultadosBusqueda";
+import { UserContext } from "../../services/userContext";
 import { Link } from "react-router-dom";
 
 import withItemsData from "../../services/withItemsData";
@@ -9,6 +10,7 @@ const Navbar = ({data}) => {
 
   const [userSearchInput, setUserSearchInput] = useState("");
   const [state, setState] = useContext(AppContext);
+  const [user, setUser] = useContext(UserContext);
 
 
   // methods to format and filter search
@@ -45,6 +47,11 @@ const Navbar = ({data}) => {
     setState(filterSearch(userSearchInput))
   }
 
+  const handleLogOut = (e) => {
+    e.preventDefault();
+    setUser(null);
+  }
+
   // const handleClick = (e) => {
   //   e.preventDefault();
   //   setState(filterSearch(userSearchInput));
@@ -77,11 +84,17 @@ const Navbar = ({data}) => {
 
                     <div className="right">
                         <li>
-                            <Link to="/login" className="log"> Log In</Link>
+                            {user ?
+                              <h3>{`Bienvenido ${user.first_name} ${user.last_name}`}</h3>
+                              :<Link to="/login" className="log"> Log In</Link>
+                            }
                         </li>
 
                         <li>
-                            <Link to="/signup" className="sign"> Sign Up</Link>
+                          {user ?
+                            <button type="button" onClick={handleLogOut}>Logout</button>
+                            :<Link to="/signup" className="sign"> Sign Up</Link>
+                            }
                         </li>
                         <li>
                             <Link to="/cart" >
