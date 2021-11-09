@@ -2,6 +2,7 @@ import React from "react";
 import { useContext } from "react";
 import {CartContext} from "../../services/CartContext";
 import Cart from "../Cart/Cart";
+
 const Card=({id,image,product_name,price,brand,category,Data})=>{
   const [cartstate, setCartstate] = useContext(CartContext);
   let cardData={Data}
