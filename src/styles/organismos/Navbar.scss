@@ -1,0 +1,76 @@
+@import "../atomos/atomos.scss";
+
+.Navbar{
+  background-color: $primary;
+  width:100%;
+  height: 60px;
+  display: flex;
+
+}
+
+.navbutton {
+  cursor: pointer;
+  height: 30px;
+}
+
+.navsize {
+  width: 600px;
+  height: 25px;
+  border-radius: 5px;
+}
+
+.alinear {
+  display: flex;
+  width:100%;
+}
+
+.alinear .left {
+  flex: 80%;
+  display: flex;
+  align-items: center;
+
+   // background-color: tomato;
+}
+
+.searchbar {
+  margin-left: 10%;
+
+}
+
+.alinear .left a {
+  text-decoration: none;
+  color: white;
+  font-size: 25px;
+}
+
+
+
+.alinear .right {
+  display: flex;
+  align-items: center;
+  flex: 20%;
+   // background-color: turquoise;
+}
+
+.alinear .right a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+
+.cart {
+  width: 50%;
+}
+
+}
+
+ul {
+   list-style-type: none;
+}
+
+li{
+  width: 100px;
+}
+
+h3 {
+  margin-left: 1%;
+}

@@ -1,45 +1,37 @@
-import React,{useEffect,useState} from "react"
-import Card from "../Card/Card"
-import withItemsHome from "../Hoc/withItemsHome"
-const Home=(data)=>{
-let Data=data.data
-const[homeData,setHomeData]=useState([])
-const[cards,setCards]=useState([])
+import Card from "../Card/Card";
+import withItemsData from "../../services/withItemsData";
+
+const Home=({data})=>{
 
 
-useEffect(()=>{
-    setHomeData(Data)
-},[Data])
-useEffect(()=>{
-    homeData.map(data=>setCards(prevState=>[...prevState,data]))
-},[homeData])
 
-    return(
-     <>
-     <div id="container" className="container">
-         {
-             cards.map(card=>{
-                 if(card.product_name===card.p){
-                     return null
-                 }
-                 else{
-                        return(
-                            <Card
-                            id={card.product_name}
-                            key={card.id}
-                            image={card.image}
-                            product_name={card.product_name}
-                            price={card.price}
-                            brand={card.brand}
-                            category={card.category}
-                            />
-                        )}
-             })
-         }
-     </div>
-     </>
-    )
+      return(
+       <>
+         <div id="container" className="container">
+             {
+                 data.map((card, index)=>{
+                   if(!card.image){card.image="https://chim-chimneyinc.com/wp-content/uploads/2019/12/GettyImages-1128826884.jpg"}
+                    return(
+                      // <div key={`${index}${card.product_name}`}>
+
+                        <Card
+                        id={card.sku}
+                        key={card.sku}
+                        image={card.image}
+                        product_name={card.product_name}
+                        price={card.price}
+                        brand={card.brand}
+                        category={card.category}
+                        Data={[card.sku,card.image,card.product_name,card.price,card.brand,card.category]}
+                        />
+                     // </div>
+                    )
+                })
+             }
+         </div>
+       </>
+      )
 
 }
 
-export default withItemsHome(Home, String("https://ecomerce-master.herokuapp.com/api/v1/item"));
+export default withItemsData(Home,"https://ecomerce-master.herokuapp.com/api/v1/item")
