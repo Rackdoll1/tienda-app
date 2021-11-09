@@ -85,11 +85,6 @@ const Navbar = ({data}) => {
                               <img src={cart} alt="cart" className="cart"></img>
                             </Link>
                         </li>
-                        <li>
-                            <Link to="/cart" >
-                              <img src={cart} alt="cart" className="cart"></img>
-                            </Link>
-                        </li>
                     </div>
                 </ul>
             </div>
