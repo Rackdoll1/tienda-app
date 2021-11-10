@@ -17,6 +17,7 @@
   padding: 0;
   margin: 0;
 
+
   .left {
     display: flex;
     align-items: center;
@@ -34,23 +35,26 @@
   .right {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     padding-right: 1rem;
 
-    width: 15rem;
 
     .cart {
-      width: 70%;
+      width: 60%;
     }
 
   }
 
-  li{
-    float: right;
-    width: 80px;
+  li {
+    display: inline;
+    max-width: 100px;
+    padding-right: 1rem;
   }
 
-  h3 {
-    margin-left: 1%;
+  li h3 {
+    margin: 0;
+    color: white;
+    margin-right: 2rem;
   }
 }
 
@@ -74,7 +78,7 @@
   font-size: 25px;
 
   &:hover {
-    color: $terciary;
+    color: $linkHover;
   }
 }
 
@@ -85,11 +89,19 @@
   font-size: 20px;
 
   &:hover {
-    color: $terciary;
+    color: $linkHover;
   }
 }
 
 
 ul {
    list-style-type: none;
+}
+
+.logout {
+  border: none;
+  border-radius: 3px;
+  height: 2rem;
+  width: 6rem;
+  background-color: rgb(174, 195, 227);
 }

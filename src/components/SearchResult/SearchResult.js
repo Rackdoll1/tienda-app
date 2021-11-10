@@ -13,6 +13,9 @@ const SearchResult = () => {
         <div id="container" className="container">
             {
                 state.map((card, index)=>{
+                  if(!card.image){
+                    card.image="https://chim-chimneyinc.com/wp-content/uploads/2019/12/GettyImages-1128826884.jpg"
+                  }
                    return(
                        <Card item={card} key={`${card.product_name}${index}`}/>
                    )

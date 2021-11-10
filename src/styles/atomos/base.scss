@@ -2,3 +2,11 @@ $primary: rgb(51, 60, 74);
 $secondary: rgb(73, 86, 99);
 $terciary: rgb(246, 247, 211);
 $cuaternary: rgb(248, 252, 235);
+
+// $linkHover: rgb(219, 121, 174);
+$linkHover: rgb(62, 209, 230);
+
+a {
+  text-decoration: none;
+  color: black;
+}

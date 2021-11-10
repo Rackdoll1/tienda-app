@@ -69,15 +69,15 @@ const Navbar = ({data}) => {
                     <div className="right">
                         <li>
                             {user ?
-                              <h3>{`Bienvenido ${user.first_name} ${user.last_name}`}</h3>
-                              :<Link to="/login" className="log" exact> Log In</Link>
+                              <h3>{`Bienvenido ${user.first_name}`}</h3>
+                              :<Link to="/login"  exact> Log In</Link>
                             }
                         </li>
 
                         <li>
                           {user ?
-                            <button type="button" onClick={handleLogOut}>Logout</button>
-                            :<Link to="/signup" className="sign" exact> Sign Up</Link>
+                            <button type="button" className="logout" onClick={handleLogOut}>Logout</button>
+                            :<Link to="/signup"  exact> Sign Up</Link>
                             }
                         </li>
                         <li>
