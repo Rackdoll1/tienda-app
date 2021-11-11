@@ -1,13 +1,15 @@
-import { useState, useEffect, useContext } from 'react';
-import { UserContext } from "../../services/userContext";
+import { useState, useContext } from 'react';
+import { useHistory } from 'react-router-dom'
 
-import axios from 'axios'
+import { UserContext } from "../../services/userContext";
+import { fetchUserToken, signupUser } from "../../services/fetchToken";
 
 const Signup = () => {
 
-  const URL_BASE = "https://ecomerce-master.herokuapp.com/api/v1/signup"
-
+  const history = useHistory();
+  const [user, setUser] = useContext(UserContext);
   const [json, setJson] = useState({});
+  const [error, setError] = useState(false);
 
   // const [user, setUser] = useContext(UserContext);
 
@@ -20,27 +22,32 @@ const Signup = () => {
     })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    signUp()
-  }
+    setError(false);
 
-  const signUp = async () => {
-    try {
-        const response = await axios.post(URL_BASE, json)
-        console.log(response);
+    const resultSignUp = await signupUser(json);
+
+    if(!resultSignUp) {
+      setError(true);
+    } else {
+      const details = {
+        email: json.email,
+        password: json.password
+      }
+
+      const resultLogin = await fetchUserToken(details);
+      setUser(resultLogin);
+      history.push("/");
+      }
     }
-    catch(err) {
-      console.log(err);
-    }
-  }
 
 
   return (
-
+        <>
           <div className="signup-form">
-              <h2>Sign Up</h2>
-              <form onSubmit={handleSubmit}>
+            <h2>Sign Up</h2>
+            <form onSubmit={handleSubmit}>
               {/* Error */}
                 <div className="form-group">
                     <label htmlFor="first_name"> Nombre(s):</label>
@@ -77,9 +84,13 @@ const Signup = () => {
                     <label htmlFor="password"> Password:</label>
                     <input type="password" name="password" id="password" onChange={handleInput} required autoComplete="off"/>
                 </div>
-            <input type="submit" value="Sign Up"></input>
-          </form>
+                <input type="submit" value="Sign Up"></input>
+            </form>
           </div>
+          {error ?
+          <h2>El correo ingresado ya se encuentra en uso. Intente con otro correo.</h2>
+          : null}
+        </>
   )
 }
 

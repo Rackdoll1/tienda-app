@@ -11,7 +11,7 @@ const Navbar = ({data}) => {
   const [userSearchInput, setUserSearchInput] = useState("");
   const [state, setState] = useContext(AppContext);
   const [user, setUser] = useContext(UserContext);
-
+  
 
   // methods to format and filter search
   const formatString = (stringToFormat) => {

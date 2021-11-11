@@ -1,50 +1,30 @@
 import { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom'
+
 import { UserContext } from "../../services/userContext";
-import axios from "axios";
+import { fetchUserToken } from "../../services/fetchToken";
+
 
 function Login() {
 
-    const URL_BASE = "https://ecomerce-master.herokuapp.com/api/v1/";
     const history = useHistory();
     const [details, setDetails] = useState({});
     const [user, setUser] = useContext(UserContext);
     const [error, setError] = useState(false);
 
 
-    const letMeIn = async (token) => {
-      try {
-        const response = await axios.get(`${URL_BASE}user/me`, {
-          headers: {
-            // Authorization: `JWT ${token}`,
-            Authorization: `JWT ${token}`
-          }
-        });
-        setUser(response.data.user);
-        history.push("/");
-      }
-      catch(err) {
-        console.log(err);
-      }
-    }
+    const submitHandler = async e => {
+        e.preventDefault();
+        setError(false);
 
-    const login = async () => {
-      setError(false);
-      try {
-        await axios.post(`${URL_BASE}login`, details)
-          .then(response => {
-            letMeIn(response.data.token);
-          });
-      }
-      catch {
-        setError(true);
-      }
+        const result =  await fetchUserToken(details);
 
-    }
-
-    const submitHandler = e => {
-        e.preventDefault()
-        login()
+        if(!result) {
+          setError(true);
+        } else {
+          setUser(result);
+          history.push("/");
+        }
     }
 
     const inputChange = (e) => {
