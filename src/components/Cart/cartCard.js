@@ -1,21 +1,39 @@
-import React from "react";
 import { useContext } from "react";
-import {CartContext} from "../../services/CartContext";
+import { CartContext } from "../../services/CartContext";
 
 
-const CartCard=({item})=>{
+const CartCard=({item, clickRefresh})=>{
   const [cartstate, setCartstate] = useContext(CartContext);
 
+
+  let counter;
+
+  if (cartstate[cartstate.indexOf(item)].counter > 0){
+    counter = cartstate[cartstate.indexOf(item)].counter;
+  }
+
   const Plus=()=>{
-    console.log(item);
     const arrayIndex = cartstate.indexOf(item);
-    console.log(arrayIndex);
     cartstate[arrayIndex].counter += 1;
-    console.log(cartstate[arrayIndex].counter);
+    clickRefresh();
   }
 
   const Minus=(e) => {
+    const arrayIndex = cartstate.indexOf(item);
+    cartstate[arrayIndex].counter -= 1;
 
+    if (cartstate[arrayIndex].counter === 0) {;
+      // remove the current item from our cart context
+      const itemToFilter = cartstate[arrayIndex];
+      setCartstate(cartstate.filter(item => {
+        if(item !== itemToFilter) {
+          return item;
+        }
+      })
+      )
+    }
+
+    clickRefresh();
   }
 
 
@@ -27,7 +45,7 @@ return(
       <h2 className="Cartprice">Price: ${item.itemInfo.price}</h2>
       <h2 className="Cartbrand">Brand: {item.itemInfo.brand}</h2>
       <h2 className="Cartcategory">Category: {item.itemInfo.category}</h2>
-      <h2>Cantidad: {cartstate[cartstate.indexOf(item)].counter}</h2>
+      <h2>Cantidad: {counter}</h2>
       <button type="button" className="CartcardButton" id={item.itemInfo.id} onClick={Plus}>+</button>
       <button type="button" className="CartcardButton" id={item.itemInfo.id} onClick={Minus}>-</button>
     </div>

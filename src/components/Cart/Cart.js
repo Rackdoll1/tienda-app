@@ -1,20 +1,22 @@
-import React, { useContext} from "react";
+import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../services/CartContext";
 import { UserContext } from "../../services/userContext";
 import CartCard from "./cartCard";
+import {cartCalculator} from "./cartCalculator";
 
 const Cart=()=>{
 
     const [cartstate, setCartstate] = useContext(CartContext);
     const [user, setUser] = useContext(UserContext);
+    const [click, setClick] = useState(Boolean);
 
-    const consola=()=>{
-        console.log(cartstate)
+    const clickRefresh = () => {
+      setClick(true);
     }
 
-    const Minus=()=>{
-        setCartstate()
-     }
+     useEffect(() => {
+       setClick(false);
+     },[click])
 
 
      return(
@@ -29,20 +31,8 @@ const Cart=()=>{
                      card.image="https://chim-chimneyinc.com/wp-content/uploads/2019/12/GettyImages-1128826884.jpg"
                    }
                     return(
-                      // <div key={`${index}${card.product_name}`}>
 
-                        // <CartCard
-                        // index={index}
-                        // id={card.id}
-                        // key={card.key}
-                        // image={!card.image ? card.image="https://chim-chimneyinc.com/wp-content/uploads/2019/12/GettyImages-1128826884.jpg"
-                        // : card.image}
-                        // product_name={card.product_name}
-                        // price={card.price}
-                        // brand={card.brand}
-                        // category={card.category}
-                        // />
-                          <CartCard item={card} />
+                          <CartCard item={card} clickRefresh={clickRefresh} />
 
                     )
                 })
@@ -52,7 +42,11 @@ const Cart=()=>{
            <div className="empty-cart">
              <h2>Para agregar productos al carrito, cree una cuenta o inicie sesión :3</h2>
            </div>
-         : null}
+         : null }
+
+         {cartstate.length !== 0 ?
+           <div className="total">Total: ${cartCalculator(cartstate)} </div>
+         :null}
       </>
     )
 
