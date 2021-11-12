@@ -50,7 +50,7 @@ function Login() {
                     <input className="ex" type="password" name="password" id="password" onChange={inputChange} required autoComplete="off"/>
                 </div>
             </div>
-            <input className="submit" type="submit" value="LOGIN"></input>
+            <input className="submit" type="submit" value="Login"></input>
         </form>
         {error ?
         <h2 className="form-error">Either email or password is incorrect. Please try again.</h2>
