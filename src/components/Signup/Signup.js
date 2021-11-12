@@ -11,7 +11,6 @@ const Signup = () => {
   const [json, setJson] = useState({});
   const [error, setError] = useState(false);
 
-  // const [user, setUser] = useContext(UserContext);
 
 
   const handleInput = (e) => {
@@ -48,7 +47,7 @@ const Signup = () => {
           <div className="signup-form">
             <h2>Sign Up</h2>
             <form onSubmit={handleSubmit}>
-              {/* Error */}
+        
                 <div className="form-group">
                     <label htmlFor="first_name"> Nombre(s):</label>
                     <input type="text" name="first_name" id="first_name" onChange={handleInput} required/>

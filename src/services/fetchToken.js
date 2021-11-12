@@ -6,7 +6,6 @@ const signupUser = async (json) => {
  let signupresult;
   try {
     const response = await axios.post(`${BASE_URL}signup`, json)
-    console.log(response.data);
     signupresult = response.data;
   }
   catch {
@@ -21,14 +20,14 @@ const signupUser = async (json) => {
 // uses token to grant authorization
 const letMeIn = async (token) => {
   let letMeInResult;
-  console.log(token);
   try {
     const response = await axios.get(`${BASE_URL}user/me`, {
       headers: {
         Authorization: `JWT ${token}`
       }
     });
-    letMeInResult = response.data.user;
+    letMeInResult = {...response.data.user, "token": token};
+    console.log(token);
   }
   catch(err) {
     console.log("Error letMeIn: ", err);
