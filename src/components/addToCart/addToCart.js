@@ -2,7 +2,6 @@ import { useContext } from "react";
 import { CartContext }  from "../../services/CartContext";
 import { UserContext } from "../../services/userContext";
 
-// TODO dont forget to make user necessary to render
 
 const AddToCart = ( {item} ) => {
 
@@ -27,14 +26,12 @@ const AddToCart = ( {item} ) => {
   }
 
   return (
-    // <>
-      // { !user ?
-      //   <button type="button" className="cardButton">Please login</button>
-      //   :
-      //   <button type="button" className="cardButton" id={item.id} onClick={handleButton}>Add to cart</button>
-      // }
     <>
-      <button type="button" className="cardButton" id={item.id} onClick={handleButton}>Add to cart</button>
+      { !user ?
+        <button type="button" className="cardButton">Please login</button>
+        :
+        <button type="button" className="cardButton" id={item.id} onClick={handleButton}>Add to cart</button>
+      }
     </>
   )
 }

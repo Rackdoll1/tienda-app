@@ -22,7 +22,7 @@ const Cart=()=>{
      return(
        <>
         { cartstate.length === 0 ?
-          <h2>Su carrito está vacío</h2>
+          <h2 className="empty-cart">Su carrito está vacío</h2>
 
         : <div id="container" className="Cartcontainer">
              {

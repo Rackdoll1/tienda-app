@@ -42,12 +42,14 @@ return(
     <div className="CartCard">
       <img src={item.itemInfo.image} className="Cartimage" alt={item.itemInfo.product_name}></img>
       <h1 className="Cartproduct_name">{item.itemInfo.product_name}</h1>
-      <h2 className="Cartprice">Price: ${item.itemInfo.price}</h2>
+      <h2 className="Cartprice"> ${item.itemInfo.price}</h2>
       <h2 className="Cartbrand">Brand: {item.itemInfo.brand}</h2>
       <h2 className="Cartcategory">Category: {item.itemInfo.category}</h2>
       <h2>Cantidad: {counter}</h2>
-      <button type="button" className="CartcardButtonA" id={item.itemInfo.id} onClick={Plus}>+</button>
-      <button type="button" className="CartcardButtonB" id={item.itemInfo.id} onClick={Minus}>-</button>
+      <div className="Cartcardbuttons">
+        <button type="button" className="CartcardButtonA" id={item.itemInfo.id} onClick={Plus}>+</button>
+        <button type="button" className="CartcardButtonB" id={item.itemInfo.id} onClick={Minus}>-</button>
+      </div>
     </div>
 )
 
