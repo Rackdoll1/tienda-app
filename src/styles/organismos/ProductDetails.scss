@@ -1,0 +1,36 @@
+.details{display: flex;
+    width: 100vw;
+    height: 100vh;
+    background-color: $terciary;
+}
+
+.detailsImage{position: relative;
+    width: 40%;
+    height: 70%;
+    top: 5%;
+    left: 2%;
+    border-radius: 10px;
+    border: 10px $secondary solid;
+    box-shadow: 5px 5px 5px black;
+}
+.info{position: relative;
+    top: 5%;
+    left: 5%;
+    display: flex;
+    height: 70%;
+    width: 52%;
+    justify-content: space-around;
+    border-radius: 20px;
+    flex-wrap: wrap;
+    background-color: lightgrey;
+
+    .detailsProduct_name{
+        width: 100%;
+        text-align: center;
+    }
+    .detailsDescription{
+        width: 100%;
+        text-align: start;
+    }
+}
+
