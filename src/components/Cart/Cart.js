@@ -1,6 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../services/CartContext";
 import { UserContext } from "../../services/userContext";
+import { Link } from "react-router-dom";
+
 import CartCard from "./cartCard";
 import {cartCalculator} from "./cartCalculator";
 
@@ -22,7 +24,7 @@ const Cart=()=>{
      return(
        <>
         { cartstate.length === 0 ?
-          <h2 className="empty-cart">Su carrito está vacío</h2>
+          <h2 className="empty-cart">Your cart is empty :(</h2>
 
         : <div id="container" className="Cartcontainer">
              {
@@ -42,8 +44,10 @@ const Cart=()=>{
          :null}
          </div>}
          { !user ?
-           <div className="empty-cart">
-             <h2>Para agregar productos al carrito, cree una cuenta o inicie sesión :3</h2>
+           <div className="cart-login">
+             <h2>To add products to your cart, please login</h2>
+             <Link to="/signup"><button className="submit">I'm new</button></Link>
+             <Link to="/login"><button className="submit-new">I have an account</button></Link>
            </div>
          : null }
 

@@ -41,26 +41,25 @@ const AddItem = () => {
 
     return (
           <>
-            <div className="additem-form">
-              <h2>Add new Item</h2>
-              <form onSubmit={handleSubmit}>
-
+              <form onSubmit={handleSubmit} className="layer3">
+                  <h1>Add new Item</h1>
                   <div className="form-group">
                       <label htmlFor="product_name"> Product name:</label>
-                      <input type="text" name="product_name" id="product_name" onChange={handleInput} required/>
+                      <input className="ex" type="text" name="product_name" id="product_name" onChange={handleInput} required/>
                   </div>
                   <div className="form-group">
                       <label htmlFor="description"> Description:</label>
-                      <textarea type="text" name="description" id="description" onChange={handleInput} required placeholder="Write a short description"/>
+                      <textarea className="ex ex-textarea" type="text" name="description" id="description" onChange={handleInput} required />
                   </div>
                   <div className="form-group">
                       <label htmlFor="price"> Precio: $</label>
-                      <input type="number" name="price" id="price" onChange={handleInput} required/>
+                      <input  className="ex" type="number" name="price" id="price" onChange={handleInput} required/>
                   </div>
                   <div className="form-group">
                     <label
                       htmlFor="category-choices"> Category:</label>
                     <input
+                      className="ex"
                       list="category-states"
                       id="category-choices"
                       name="category"
@@ -88,26 +87,25 @@ const AddItem = () => {
                   </div>
                   <div className="form-group" >
                       <label htmlFor="brand"> Brand:</label>
-                      <input type="text" name="brand" id="brand" onChange={handleInput} required />
+                      <input className="ex" type="text" name="brand" id="brand" onChange={handleInput} required />
                   </div>
                   <div className="form-group" >
                       <label htmlFor="sku"> Sku:</label>
-                      <input type="text" name="sku" id="sku" onChange={handleInput} required  placeholder="Example: 123ab23..."/>
+                      <input className="ex" type="text" name="sku" id="sku" onChange={handleInput} required  placeholder="Example: 123ab23..."/>
                   </div>
                   <div className="form-group" >
                       <label htmlFor="image"> Image:</label>
-                      <input type="text" name="image" id="image" onChange={handleInput} required placeholder="Add image url..."/>
+                      <input className="ex" type="text" name="image" id="image" onChange={handleInput} required placeholder="Image url..."/>
                   </div>
 
-                  <input type="submit" value="Create Item" />
+                  <input className="submit" type="submit" value="Create Item" />
               </form>
-            </div>
-            {error ?
-            <h2>Your product couldn't be created. Please double check all fields and try again.</h2>
-            : null}
-            {success ?
-            <h2>Success! Your new product has been created.</h2>
-            : null}
+              {error ?
+              <h2 className="form-error">Your product couldn't be created. Please double check all fields and try again.</h2>
+              : null}
+              {success ?
+              <h2 className="form-success">Success! Your new product has been created.</h2>
+              : null}
           </>
     )
 

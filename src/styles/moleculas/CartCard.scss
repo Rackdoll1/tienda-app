@@ -81,8 +81,9 @@
 
 }
 
-.total{display: flex;
-    margin-top: 4%;
+.total{
+    display: flex;
+    margin-top: 3.5%;
     margin-left: 80%;
     border-radius:10px ;
     justify-content: center;
@@ -95,4 +96,18 @@
 
 .empty-cart {
   text-align: center;
+  margin: 5rem 0;
+}
+
+.cart-login {
+  background-color: rgb(252, 252, 234);
+  text-align: center;
+  border-style: solid;
+  border-color: #92a8d1;
+  border-radius: 20px;
+  box-sizing: border-box;
+  width: 25%;
+  height: 30%;
+  padding: 25px 50px;
+  margin: 5rem auto;
 }

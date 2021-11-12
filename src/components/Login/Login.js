@@ -43,17 +43,17 @@ function Login() {
             <div className="form-inner">
                 <div className="form-group email">
                     <label htmlFor="email"> Email:</label>
-                    <input class="ex" type="email" name="email" id="email" onChange={inputChange} required/>
+                    <input className="ex" type="email" name="email" id="email" onChange={inputChange} required/>
                 </div>
                 <div className="form-group password">
                     <label htmlFor="password"> Password:</label>
-                    <input class="ex" type="password" name="password" id="password" onChange={inputChange} required autoComplete="off"/>
+                    <input className="ex" type="password" name="password" id="password" onChange={inputChange} required autoComplete="off"/>
                 </div>
             </div>
             <input className="submit" type="submit" value="LOGIN"></input>
         </form>
         {error ?
-        <h2>El correo o la contraseña son incorrectos. Intente de nuevo</h2>
+        <h2 className="form-error">Either email or password is incorrect. Please try again.</h2>
         : null}
     </>
     )
