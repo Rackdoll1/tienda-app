@@ -37,6 +37,9 @@ const Cart=()=>{
                     )
                 })
              }
+             {cartstate.length !== 0 ?
+           <div className="total"><h1>Total: ${cartCalculator(cartstate)}</h1> </div>
+         :null}
          </div>}
          { !user ?
            <div className="empty-cart">
@@ -44,9 +47,6 @@ const Cart=()=>{
            </div>
          : null }
 
-         {cartstate.length !== 0 ?
-           <div className="total">Total: ${cartCalculator(cartstate)} </div>
-         :null}
       </>
     )
 
