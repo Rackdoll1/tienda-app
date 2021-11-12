@@ -80,9 +80,20 @@ const Signup = () => {
                     <label htmlFor="email"> Email:</label>
                     <input type="email" name="email" id="email" onChange={handleInput} required/>
                 </div>
-                <div className="form-group">
+                <div className="form-group radio-options" >
                     <label htmlFor="password"> Password:</label>
                     <input type="password" name="password" id="password" onChange={handleInput} required autoComplete="off"/>
+                </div>
+                <div className="form-group radio-options">
+                  <label htmlFor="role"> Rol:</label>
+                  <div>
+                    <label htmlFor="roleC"> Comprador</label>
+                    <input type="radio" name="role" id="customer" value="CUSTOMER" onChange={handleInput} required/>
+                  </div>
+                  <div>
+                    <label htmlFor="roleA"> Vendedor</label>
+                    <input type="radio" name="role" id="admin" value="ADMIN" onChange={handleInput} required/>
+                  </div>
                 </div>
                 <input type="submit" value="Sign Up"></input>
             </form>

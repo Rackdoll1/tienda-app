@@ -32,7 +32,7 @@ const Cart=()=>{
                    }
                     return(
 
-                          <CartCard item={card} clickRefresh={clickRefresh} />
+                          <CartCard item={card} clickRefresh={clickRefresh} key={`${card.product_name}${index}`}/>
 
                     )
                 })

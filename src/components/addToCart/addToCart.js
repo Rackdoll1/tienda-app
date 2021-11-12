@@ -16,14 +16,12 @@ const AddToCart = ( {item} ) => {
 
   const exists = () => {
     const result = cartstate.some(elem => elem.itemInfo === cardData.itemInfo);
-    console.log(result);
     return result;
   }
 
   const handleButton = () => {
       if(!exists()) {
         cardData.counter += 1;
-        console.log(cardData.counter);
         setCartstate([...cartstate, cardData]);
       }
   }

@@ -21,7 +21,7 @@ const signupUser = async (json) => {
 // uses token to grant authorization
 const letMeIn = async (token) => {
   let letMeInResult;
-
+  console.log(token);
   try {
     const response = await axios.get(`${BASE_URL}user/me`, {
       headers: {
