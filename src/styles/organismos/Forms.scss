@@ -17,17 +17,7 @@
   }
 }
 
-// .layer2  {
-//   border-style: solid;
-//   border-color: #92a8d1;
-//   border-radius: 20px;
-//   box-sizing: border-box;
-//   height: 550px;
-//   padding: 20px;
-//   width: 300px;
-//   margin-left: 40%;
-//   overflow: hidden;
-// }
+
 
 .layer2  {
   border-style: solid;
@@ -56,7 +46,7 @@ background-color: #d8dbf7;
   border: 0;
   height: 30px;
   box-sizing: border-box;
-  color: #eee;
+  color: rgb(10, 0, 0);
   font-size: 18px;
   padding: 4px 20px 0;
   margin-top: 5px;
@@ -67,12 +57,13 @@ background-color: #d8dbf7;
   border-radius: 12px;
   border: 0;
   height: 30px;
-  width: 100px;
+  width: 260px;
   box-sizing: border-box;
   color: rgb(7, 0, 0);
   font-size: 18px;
   padding: 4px 20px 0;
-  margin-top: 5px;
+  margin-top: 15px;
+  display: flex;
 }
 
 
