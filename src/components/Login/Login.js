@@ -39,6 +39,7 @@ function Login() {
     return (
       <>
         <form className="layer1" onSubmit={submitHandler}>
+          <h1>Hi there! </h1>
             <div className="form-inner">
                 <div className="form-group email">
                     <label htmlFor="email"> Email:</label>
@@ -49,7 +50,7 @@ function Login() {
                     <input class="ex" type="password" name="password" id="password" onChange={inputChange} required autoComplete="off"/>
                 </div>
             </div>
-            <input class="submit" type="submit" value="LOGIN"></input>
+            <input className="submit" type="submit" value="LOGIN"></input>
         </form>
         {error ?
         <h2>El correo o la contraseña son incorrectos. Intente de nuevo</h2>

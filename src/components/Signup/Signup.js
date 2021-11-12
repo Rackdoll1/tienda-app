@@ -45,14 +45,7 @@ const Signup = () => {
   return (
         <>
           <div className="signup-form">
-<<<<<<< HEAD
-            <h2>Sign Up</h2>
-            <form onSubmit={handleSubmit}>
-        
-=======
             <form onSubmit={handleSubmit} className = "layer2">
-              {/* Error */}
->>>>>>> e68e1635903b674e28b8f109e0e07138ba984868
                 <div className="form-group">
                     <label htmlFor="first_name"> Names(s):</label>
                     <input class="ex" type="text" name="first_name" id="first_name" onChange={handleInput} required/>
@@ -75,7 +68,7 @@ const Signup = () => {
                     <div>
                     <input type="radio" name="gender" id="Female" value="F" onChange={handleInput} required />
                       <label htmlFor="genderF"> Female</label>
-                  
+
                     </div>
                     <div>
               <input type="radio" name="gender" id="Otro" value="F" onChange={handleInput} required />
@@ -95,12 +88,12 @@ const Signup = () => {
                   <div>
               <input type="radio" name="role" id="customer" value="CUSTOMER" onChange={handleInput} required />
                     <label htmlFor="roleC"> Client </label>
-                
+
                   </div>
                   <div>
               <input type="radio" name="role" id="admin" value="ADMIN" onChange={handleInput} required />
                     <label htmlFor="roleA"> Suppplier/ Salesman</label>
-                    
+
                   </div>
                 </div>
           <input class="submit" type="submit" value="Sign Up"></input>

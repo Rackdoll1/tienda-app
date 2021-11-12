@@ -10,6 +10,11 @@
   width: 300px;
   margin-left: 40%;
   overflow: hidden;
+
+  h1{
+    font-size: 2rem;
+    margin: 0;
+  }
 }
 
 // .layer2  {
@@ -89,7 +94,7 @@ background-color: #d8dbf7;
   cursor: pointer;
   font-size: 18px;
   height: 30px;
-  margin-top: 20px;
+  margin-top: 30px;
   // outline: 0;
   text-align: center;
   width: 100%;
