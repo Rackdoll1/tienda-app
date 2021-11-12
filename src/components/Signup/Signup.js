@@ -45,56 +45,65 @@ const Signup = () => {
   return (
         <>
           <div className="signup-form">
+<<<<<<< HEAD
             <h2>Sign Up</h2>
             <form onSubmit={handleSubmit}>
         
+=======
+            <form onSubmit={handleSubmit} className = "layer2">
+              {/* Error */}
+>>>>>>> e68e1635903b674e28b8f109e0e07138ba984868
                 <div className="form-group">
-                    <label htmlFor="first_name"> Nombre(s):</label>
-                    <input type="text" name="first_name" id="first_name" onChange={handleInput} required/>
+                    <label htmlFor="first_name"> Names(s):</label>
+                    <input class="ex" type="text" name="first_name" id="first_name" onChange={handleInput} required/>
                 </div>
                 <div className="form-group">
-                    <label htmlFor="last_name"> Apellidos:</label>
-                    <input type="text" name="last_name" id="last_name" onChange={handleInput} required/>
+                    <label htmlFor="last_name"> Last Name:</label>
+                <input class="ex" type="text" name="last_name" id="last_name" onChange={handleInput} required/>
                 </div>
                 <div className="form-group">
-                    <label htmlFor="birth_date"> Fecha de Nacimiento:</label>
-                    <input type="date" name="birth_date" id="birth_date" onChange={handleInput} required/>
+                    <label htmlFor="birth_date"> Date of Birth:</label>
+               <input class="bday"  type="date" name="birth_date" id="birth_date" onChange={handleInput} required/>
                 </div>
-                <div className="form-group">
-                    <label htmlFor="gender"> Género:</label>
+                <div className="form-group gender">
+                    <label htmlFor="gender"> Gender:</label>
                     <div>
-                      <label htmlFor="genderM"> Masculino</label>
-                      <input type="radio" name="gender" id="Male" value="M" onChange={handleInput} required/>
+                      <input type="radio" name="gender" id="Male" value="M" onChange={handleInput} required />
+                      <label htmlFor="genderM"> Male</label>
+                      {/* <input type="radio" name="gender" id="Male" value="M" onChange={handleInput} required/> */}
                     </div>
                     <div>
-                      <label htmlFor="genderF"> Femenino</label>
-                      <input type="radio" name="gender" id="Female" value="F" onChange={handleInput} required/>
+                    <input type="radio" name="gender" id="Female" value="F" onChange={handleInput} required />
+                      <label htmlFor="genderF"> Female</label>
+                  
                     </div>
                     <div>
-                      <label htmlFor="genderO"> Otro</label>
-                      <input type="radio" name="gender" id="Otro" value="F" onChange={handleInput} required/>
+              <input type="radio" name="gender" id="Otro" value="F" onChange={handleInput} required />
+                      <label htmlFor="genderO"> Other</label>
                     </div>
                 </div>
                 <div className="form-group">
                     <label htmlFor="email"> Email:</label>
-                    <input type="email" name="email" id="email" onChange={handleInput} required/>
+              <input class="ex" type="email" name="email" id="email" onChange={handleInput} required/>
                 </div>
                 <div className="form-group radio-options" >
                     <label htmlFor="password"> Password:</label>
-                    <input type="password" name="password" id="password" onChange={handleInput} required autoComplete="off"/>
+              <input class="ex" type="password" name="password" id="password" onChange={handleInput} required autoComplete="off"/>
                 </div>
                 <div className="form-group radio-options">
-                  <label htmlFor="role"> Rol:</label>
+                  <label htmlFor="role"> Role:</label>
                   <div>
-                    <label htmlFor="roleC"> Comprador</label>
-                    <input type="radio" name="role" id="customer" value="CUSTOMER" onChange={handleInput} required/>
+              <input type="radio" name="role" id="customer" value="CUSTOMER" onChange={handleInput} required />
+                    <label htmlFor="roleC"> Client </label>
+                
                   </div>
                   <div>
-                    <label htmlFor="roleA"> Vendedor</label>
-                    <input type="radio" name="role" id="admin" value="ADMIN" onChange={handleInput} required/>
+              <input type="radio" name="role" id="admin" value="ADMIN" onChange={handleInput} required />
+                    <label htmlFor="roleA"> Suppplier/ Salesman</label>
+                    
                   </div>
                 </div>
-                <input type="submit" value="Sign Up"></input>
+          <input class="submit" type="submit" value="Sign Up"></input>
             </form>
           </div>
           {error ?
