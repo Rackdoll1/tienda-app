@@ -1,0 +1,96 @@
+@import "../atomos/atomos.scss";
+
+.layer1  {
+  border-style: solid;
+  border-color: #92a8d1;
+  border-radius: 20px;
+  box-sizing: border-box;
+  height: 300px;
+  padding: 20px;
+  width: 300px;
+  margin-left: 40%;
+  overflow: hidden;
+}
+
+// .layer2  {
+//   border-style: solid;
+//   border-color: #92a8d1;
+//   border-radius: 20px;
+//   box-sizing: border-box;
+//   height: 550px;
+//   padding: 20px;
+//   width: 300px;
+//   margin-left: 40%;
+//   overflow: hidden;
+// }
+
+.layer2  {
+  border-style: solid;
+  border-color: #92a8d1;
+  border-radius: 20px;
+  box-sizing: border-box;
+  height: 550px;
+  padding: 20px;
+  width: 300px;
+  margin-left: 40%;
+  overflow: hidden;
+}
+
+
+
+
+.gender {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+
+.ex {
+background-color: #d8dbf7;
+  border-radius: 12px;
+  border: 0;
+  height: 30px;
+  box-sizing: border-box;
+  color: #eee;
+  font-size: 18px;
+  padding: 4px 20px 0;
+  margin-top: 5px;
+}
+
+.bday {
+background-color: #d8dbf7;
+  border-radius: 12px;
+  border: 0;
+  height: 30px;
+  width: 100px;
+  box-sizing: border-box;
+  color: rgb(7, 0, 0);
+  font-size: 18px;
+  padding: 4px 20px 0;
+  margin-top: 5px;
+}
+
+
+
+.email {
+    margin-top: 30px;
+}
+
+.password {
+    margin-top: 10px;
+}
+
+.submit {
+    background-color: rgb(187, 61, 61);
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: #eee;
+  cursor: pointer;
+  font-size: 18px;
+  height: 30px;
+  margin-top: 20px;
+  // outline: 0;
+  text-align: center;
+  width: 100%;
+}

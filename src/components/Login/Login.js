@@ -5,6 +5,7 @@ import { UserContext } from "../../services/userContext";
 import { fetchUserToken } from "../../services/fetchToken";
 
 
+
 function Login() {
 
     const history = useHistory();
@@ -37,19 +38,18 @@ function Login() {
 
     return (
       <>
-        <form onSubmit={submitHandler}>
+        <form className="layer1" onSubmit={submitHandler}>
             <div className="form-inner">
-                <h2>Login</h2>
-                <div className="form-group">
+                <div className="form-group email">
                     <label htmlFor="email"> Email:</label>
-                    <input type="email" name="email" id="email" onChange={inputChange} required/>
+                    <input class="ex" type="email" name="email" id="email" onChange={inputChange} required/>
                 </div>
-                <div className="form-group">
+                <div className="form-group password">
                     <label htmlFor="password"> Password:</label>
-                    <input type="password" name="password" id="password" onChange={inputChange} required autoComplete="off"/>
+                    <input class="ex" type="password" name="password" id="password" onChange={inputChange} required autoComplete="off"/>
                 </div>
             </div>
-            <input type="submit" value="LOGIN"></input>
+            <input class="submit" type="submit" value="LOGIN"></input>
         </form>
         {error ?
         <h2>El correo o la contraseña son incorrectos. Intente de nuevo</h2>
