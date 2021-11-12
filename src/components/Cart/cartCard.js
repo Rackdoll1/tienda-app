@@ -46,8 +46,8 @@ return(
       <h2 className="Cartbrand">Brand: {item.itemInfo.brand}</h2>
       <h2 className="Cartcategory">Category: {item.itemInfo.category}</h2>
       <h2>Cantidad: {counter}</h2>
-      <button type="button" className="CartcardButton" id={item.itemInfo.id} onClick={Plus}>+</button>
-      <button type="button" className="CartcardButton" id={item.itemInfo.id} onClick={Minus}>-</button>
+      <button type="button" className="CartcardButtonA" id={item.itemInfo.id} onClick={Plus}>+</button>
+      <button type="button" className="CartcardButtonB" id={item.itemInfo.id} onClick={Minus}>-</button>
     </div>
 )
 

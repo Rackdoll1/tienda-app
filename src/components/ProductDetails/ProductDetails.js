@@ -12,12 +12,14 @@ const ProductDetails = () => {
   return(
     <>
         <div className="details">
-            <img src={productState?.image} className="image" alt={productState.product_name}></img>
-            <h1 className="product_name">{productState.product_name}</h1>
-            <h2 className="description">{productState.description}</h2>
-            <h2 className="price">Price: ${productState.price}</h2>
-            <h2 className="brand">Brand: {productState.brand}</h2>
-            <h2 className="category">Category: {productState.category}</h2>
+            <img src={productState?.image} className="detailsImage" alt={productState.product_name}></img>
+            <div className="info">
+            <h1 className="detailsProduct_name">{productState.product_name}</h1>
+            <h2 className="detailsDescription">{productState.description}</h2>
+            <h2 className="detailsPrice">Price: ${productState.price}</h2>
+            <h2 className="detailsBrand">Brand: {productState.brand}</h2>
+            <h2 className="detailsCategory">Category: {productState.category}</h2>
+            </div>
           <AddToCart item={productState} />
         </div>
     </>

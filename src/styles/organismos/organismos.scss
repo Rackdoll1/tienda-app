@@ -1,11 +1,16 @@
 @import "../moleculas/moleculas.scss";
 @import "./Home.scss";
 @import "./Navbar.scss";
+<<<<<<< HEAD
 @import "./Forms.scss";
+=======
+@import "./ProductDetails.scss";
+>>>>>>> f43cb46c545a46311bc3e32d2f6d0959ea7df472
 
 body{
     height: 100vh;
     width: 100vw;
+    background-color: $terciary;
 }
 
 #root{
