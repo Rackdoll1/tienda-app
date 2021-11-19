@@ -17,7 +17,7 @@ const Card=({item})=>{
 
   return(
       <div className="card">
-        <Link to="/productDetails" exact onClick={handleClick} >
+        <Link to="/productDetails" onClick={handleClick}>
           <img src={item?.image} className="image" alt={item.product_name}></img>
           <h1 className="product_name">{item.product_name}</h1>
           <h2 className="price">${item.price}</h2>

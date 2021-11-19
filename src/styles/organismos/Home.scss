@@ -2,17 +2,16 @@
 
 .container {
 
-  position: fixed;
-  top: 18%;
-  left: 10%;
+  margin: 3rem auto;
 
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: auto;
+  grid-gap: 2rem;
 
   padding-bottom: 5%;
-  width: 80%;
-  height: 70%;
+  width: 75%;
+  height: 72%;
   overflow: hidden;
   overflow-y:scroll;
   background-color: $secondary;
