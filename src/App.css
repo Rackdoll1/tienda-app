@@ -1,14 +1,5 @@
 /* atomos: estilos de boton (input, tamaño de letra,logo) */
 /* moleculas estrcura general de navbar */
 /* organismos: body , media queries */
-.App {
-  width: 100vw;
-  height: 100vh;
-}
 
-
-
-body {
-  margin:0;
-  padding: 0;
-}
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');

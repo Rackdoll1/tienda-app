@@ -1,0 +1,134 @@
+@import "../atomos/atomos.scss";
+
+.form-group{
+  margin-bottom: 10px;
+}
+.layer1  {
+  background-color: rgb(252, 252, 234);
+  border-style: solid;
+  border-color: #92a8d1;
+  border-radius: 20px;
+  box-sizing: border-box;
+  height: 300px;
+  padding: 20px;
+  width: 300px;
+  margin: 2rem auto;
+  overflow: hidden;
+
+  h1{
+    font-size: 2rem;
+    margin: 0;
+  }
+
+  .email {
+      margin-top: 30px;
+  }
+
+  .password {
+      margin-top: 10px;
+  }
+}
+
+
+.layer2  {
+  background-color: rgb(252, 252, 234);
+  border-style: solid;
+  border-color: #92a8d1;
+  border-radius: 20px;
+  box-sizing: border-box;
+  height: 630px;
+  padding: 20px;
+  width: 300px;
+  margin: 2rem auto;
+  overflow: hidden;
+
+  h1{
+    font-size: 2rem;
+    margin: 0 0 1rem 0;
+  }
+}
+
+.layer3  {
+  background-color: rgb(252, 252, 234);
+  border-style: solid;
+  border-color: #92a8d1;
+  border-radius: 20px;
+  box-sizing: border-box;
+  height: 640px;
+  padding: 20px;
+  width: 300px;
+  margin: 2rem auto;
+  overflow: hidden;
+
+  h1{
+    font-size: 2rem;
+    margin: 0 0 1rem 0;
+  }
+
+  .ex-textarea {
+    height: 4rem;
+  }
+}
+
+
+
+.ex {
+  background-color: #d8dbf7;
+  border-radius: 12px;
+  border: 0;
+  height: 30px;
+  box-sizing: border-box;
+  color: rgb(10, 0, 0);
+  font-size: 18px;
+  padding: 4px 20px 0;
+  margin-top: 5px;
+  width: 250px;
+}
+
+
+.submit {
+  background-color: rgb(187, 61, 61);
+  box-shadow: 1px 1px 2px black;
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: #eee;
+  cursor: pointer;
+  font-size: 18px;
+  height: 30px;
+  margin-top: 15px;
+  text-align: center;
+  width: 100%;
+
+  &:hover {
+    background-color: rgb(172, 44, 44);
+    box-shadow: 1px 1px 2px  rgba(0, 0, 0, 0.678);
+  }
+}
+
+.submit-new {
+
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-size: 18px;
+  height: 30px;
+  margin-top: 15px;
+  text-align: center;
+  width: 100%;
+
+  &:hover {
+    background-color: rgb(230, 230, 230);
+  }
+}
+
+.form-error {
+  text-align: center;
+  color: rgb(255, 0, 0);
+}
+
+.form-success {
+  text-align: center;
+  color: rgb(19, 177, 64);
+}

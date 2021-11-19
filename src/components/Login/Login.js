@@ -1,41 +1,61 @@
-import { useState, useEffect } from 'react'
-import axios from 'axios'
-import LoginForm from './LoginForm'
+import { useState, useContext } from 'react';
+import { useHistory } from 'react-router-dom'
 
-const Login = () => {
+import { UserContext } from "../../services/userContext";
+import { fetchUserToken } from "../../services/fetchToken";
 
 
-    const adminUser = {
-        email: "admin@admin.com",
-        password: "admin"
+
+function Login() {
+
+    const history = useHistory();
+    const [details, setDetails] = useState({});
+    const [user, setUser] = useContext(UserContext);
+    const [error, setError] = useState(false);
+
+
+    const submitHandler = async e => {
+        e.preventDefault();
+        setError(false);
+
+        const result =  await fetchUserToken(details);
+
+        if(!result) {
+          setError(true);
+        } else {
+          setUser(result);
+          history.push("/");
+        }
+    }
+
+    const inputChange = (e) => {
+      setDetails({
+        ...details,
+        [e.target.name]: e.target.value
+      })
     }
 
 
-    const [user, setUser] = useState({ name: "", email: "" })
-    const [error, setError] = useState("")
-
-    // were gonna pass details
-    const Login = details => {
-        console.log(details)
-    }
-
-    const Logout = () => {
-        console.log("Logout")
-    }
     return (
-        <div>
-            {(user.email != "") ? (
-                <div>
-                    <h2>Welcome, <span>{user.name}</span></h2>
-                    <button>Logout</button>
+      <>
+        <form className="layer1" onSubmit={submitHandler}>
+          <h1>Hi there! </h1>
+            <div className="form-inner">
+                <div className="form-group email">
+                    <label htmlFor="email"> Email:</label>
+                    <input className="ex" type="email" name="email" id="email" onChange={inputChange} required/>
                 </div>
-
-            ) : <LoginForm Login={Login} error={error}></LoginForm>}
-
-        </div>
-
-
-
+                <div className="form-group password">
+                    <label htmlFor="password"> Password:</label>
+                    <input className="ex" type="password" name="password" id="password" onChange={inputChange} required autoComplete="off"/>
+                </div>
+            </div>
+            <input className="submit" type="submit" value="Login"></input>
+        </form>
+        {error ?
+        <h2 className="form-error">Either email or password is incorrect. Please try again.</h2>
+        : null}
+    </>
     )
 }
 

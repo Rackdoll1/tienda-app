@@ -1,22 +1,29 @@
 @import "../atomos/atomos.scss";
 
-.container{
-    top: 15%;
-    left: 18%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-content: space-around;
-    padding-bottom: 100%;
-    position: fixed;
-    width: 80%;
-    height: 70%;
-    overflow: hidden;
-    overflow-y:scroll;
-    background-color: $secondary;
-    border-radius: 20px;
+.container {
+
+  margin: 3rem auto;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: auto;
+  grid-gap: 2rem;
+
+  padding-bottom: 5%;
+  width: 75%;
+  height: 72%;
+  overflow: hidden;
+  overflow-y:scroll;
+  background-color: $secondary;
+  border-radius: 20px;
 }
 
 .container::-webkit-scrollbar {
     display: none;
+}
+
+.container-no-results {
+  text-align: center;
+
+  margin-top: 5rem;
 }

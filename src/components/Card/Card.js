@@ -1,16 +1,33 @@
-import React from "react";
+import { useContext } from "react";
+import { Link } from "react-router-dom";
 
-const Card=({image,product_name,price,brand,category,id})=>{
+import { ProductContext } from "../../services/productContext";
+import AddToCart from "../../components/addToCart/addToCart";
 
-return(
-    <div className="card" id={id}>
-    <img src={image} className="image" alt={image}></img>
-    <h1 className="product_name">{product_name}</h1>
-    <h2 className="price">Price: ${price}</h2>
-    <h2 className="brand">Brand: {brand}</h2>
-    <h2 className="category">Category: {category}</h2>
-    </div>
-)
+
+const Card=({item})=>{
+  const [productState, setProductState] = useContext(ProductContext);
+
+
+  const handleClick = () => {
+    setProductState(item);
+  }
+
+
+
+  return(
+      <div className="card">
+        <Link to="/productDetails" onClick={handleClick}>
+          <img src={item?.image} className="image" alt={item.product_name}></img>
+          <h1 className="product_name">{item.product_name}</h1>
+          <h2 className="price">${item.price}</h2>
+          <h3 className="brand">Brand: {item.brand}</h3>
+          <h3 className="category">Category: {item.category}</h3>
+        </Link>
+        <AddToCart item={item} />
+      </div>
+
+  )
 
 }
 

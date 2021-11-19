@@ -1,16 +1,80 @@
 @import "../atomos/atomos.scss";
 
-.Navbar{
+.Navbar {
   background-color: $primary;
   width:100%;
-  height: 60px;
-  display: flex;
 
 }
+
+ul {
+   list-style-type: none;
+}
+
+.alinear {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  height: 100px;
+  width: 100%;
+
+  padding: 0;
+  margin: 0;
+
+  li {
+    display: inline;
+    text-align: left;
+  }
+
+  li h3 {
+    margin: 0;
+    color: white;
+  }
+
+
+  .left {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+
+      li {
+        margin-right: 2rem;
+      }
+
+
+  }
+
+  .center {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .right {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+      li {
+        margin-left: 2rem;
+      }
+      .cart {
+        width: 60px;
+        padding-right: 3px;
+      }
+
+  }
+
+}
+
 
 .navbutton {
   cursor: pointer;
   height: 30px;
+  margin: 0.5rem;
+
+  border: none;
+  border-radius: 3px;
 }
 
 .navsize {
@@ -19,52 +83,98 @@
   border-radius: 5px;
 }
 
-.alinear {
-  display: flex;
-  width:100%;
-}
+.store-name {
+  font-weight: 900;
 
-.alinear .left {
-  flex:90%;
-  display: flex;
-  align-items: center;
+  color: $primary;
+  background-color: white;
 
-  /* background-color: tomato; */
-}
+  outline: 1px solid white;
+  outline-offset: 5px;
+  border-radius: 2px;
 
-.searchbar {
-  margin-left: 10%;
 
 }
 
-.alinear .left a {
+.navbar-a {
   text-decoration: none;
   color: white;
-  font-size: 25px;
+
+  &:hover {
+    color: $cuaternary;
+  }
+}
+
+.font-28 {
+  font-size: 28px;
+}
+
+.font-22 {
+  font-size: 22px;
 }
 
 
+.logout {
+  cursor: pointer;
 
-.alinear .right {
-  display: flex;
-  align-items: center;
-  flex:30%;
-  /* background-color: turquoise; */
-    justify-content: space-around;
+  border: none;
+  border-radius: 3px;
+
+  height: 2rem;
+  width: 6rem;
+
+  background-color: rgb(174, 195, 227);
+  box-shadow: 2px 2px 2px black;
+
+  &:hover {
+    background-color: rgb(132, 157, 195);
+    box-shadow: 5px 2px 5px rgba(0, 0, 0,0.5) ;
+  }
 }
 
-.alinear .right a {
-  text-decoration: none;
+.active {
+  outline: 1px solid white;
+  outline-offset: 5px;
+  border-radius: 2px;
+
+  // text-decoration: white;
+
+}
+
+.cart-icons {
+  position: relative;
+
+}
+
+.number-items {
+  background-color: rgb(245, 44, 67);
   color: white;
-  font-size: 20px;
+  border-radius: 50%;
 
 
+  width: 1.5rem;
+  height: 1.5rem;
+
+  position: absolute;
+  right: 15px;
+
+  text-align: center;
 }
 
-ul {
-   list-style-type: none;
+.no-outline {
+  outline: none;
 }
 
-h3 {
-  margin-left: 1%;
+.store-logo {
+  width: 60px;
+}
+
+.create-item {
+  background-color:rgb(232, 179, 77);
+  box-shadow: 2px 2px 2px black;
+
+  &:hover {
+    background-color: rgb(255, 168, 0);
+    box-shadow: 5px 2px 5px rgba(0, 0, 0,0.5) ;
+  }
 }
