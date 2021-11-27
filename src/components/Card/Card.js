@@ -19,10 +19,12 @@ const Card=({item})=>{
       <div className="card">
         <Link to="/productDetails" onClick={handleClick}>
           <img src={item?.image} className="image" alt={item.product_name}></img>
-          <h1 className="product_name">{item.product_name}</h1>
-          <h2 className="price">${item.price}</h2>
-          <h3 className="brand">Brand: {item.brand}</h3>
-          <h3 className="category">Category: {item.category}</h3>
+          <div className="card-text">
+            <h1 className="h1-text webkit-show-text line-clamp-2">{item.product_name}</h1>
+            <h2 className="h2-text webkit-show-text line-clamp-1">${item.price}</h2>
+            <h3 className="h3-text">Brand: {item.brand}</h3>
+            <h3 className="h3-text">Category: {item.category}</h3>
+          </div>
         </Link>
         <AddToCart item={item} />
       </div>

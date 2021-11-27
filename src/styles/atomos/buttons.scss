@@ -1,0 +1,31 @@
+@import "./base.scss";
+
+.button {
+  border: none;
+  border-radius: 5px;
+
+  cursor: pointer;
+}
+
+.button--card {
+    position: absolute;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 2px 2px 2px black;
+    background-color: $cuaternary;
+    bottom: 5%;
+    right: 8%;
+    width: 25%;
+    height: 6%;
+
+    font-weight: 700;
+
+    &:hover{
+        background-color: $cuaternary-hover;
+    }
+
+    &:active{
+        background-color: $cuaternary-active;
+    }
+
+}

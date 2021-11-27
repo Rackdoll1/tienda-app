@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route } from "react-router-dom"
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 // services
 import UserProvider from "./services/userContext";
 import SearchProvider from './services/resultadosBusqueda';
@@ -13,6 +13,7 @@ import SearchResult from './components/SearchResult/SearchResult';
 import Cart from "./components/Cart/Cart";
 import ProductDetails from "./components/ProductDetails/ProductDetails";
 import AddItem from "./components/addItem/AddItem";
+import PageNotFound from "./components/PageNotFound/PageNotFound";
 
 // styles
 import "./styles/organismos/organismos.scss";
@@ -28,27 +29,16 @@ function App() {
             <ProductContext>
               <Router>
                   <Navbar />
-                  <Route exact path="/">
-                    <Home />
-                  </Route>
-                  <Route exact path="/cart">
-                    <Cart />
-                  </Route>
-                  <Route exact path="/searchResult">
-                    <SearchResult />
-                  </Route>
-                  <Route exact path="/login">
-                    <Login />
-                  </Route>
-                  <Route exact path="/signup">
-                    <Signup />
-                  </Route>
-                  <Route exact path="/productDetails">
-                    <ProductDetails />
-                  </Route>
-                  <Route exact path="/createItem">
-                    <AddItem />
-                  </Route>
+                  <Switch>
+                    <Route exact path="/" component={Home} />
+                    <Route exact path="/cart" component={Cart}/>
+                    <Route exact path="/searchResult" component={SearchResult}/>
+                    <Route exact path="/login" component={Login}/>
+                    <Route exact path="/signup" component={Signup} />
+                    <Route exact path="/productDetails" component={ProductDetails} />
+                    <Route exact path="/createItem" component={AddItem} />
+                    <Route render={() => <PageNotFound />} />
+                  </Switch>
               </Router>
             </ProductContext>
           </CartContext>

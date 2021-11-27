@@ -41,7 +41,7 @@ const AddItem = () => {
 
     return (
           <>
-              <form onSubmit={handleSubmit} className="layer3">
+              <form onSubmit={handleSubmit} className="layer">
                   <h1>Add new Item</h1>
                   <div className="form-group">
                       <label htmlFor="product_name"> Product name:</label>

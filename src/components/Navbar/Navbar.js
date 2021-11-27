@@ -71,7 +71,7 @@ const Navbar = ({data}) => {
                         <li>
                           {user?.role === "ADMIN"?
                             <NavLink to="/createItem" exact className="no-outline">
-                              <button type="button" className="create-item navbutton" >New Item</button>
+                              <button type="button" className="button create-item navbutton" >New Item</button>
                             </NavLink>
                             :null
                           }
@@ -98,7 +98,7 @@ const Navbar = ({data}) => {
                         </li>
                         <li>
                             {user ?
-                              <h3>{`Bienvenid@ ${user.first_name}`}</h3>
+                              <h3>{`Welcome ${user.first_name}`}</h3>
                               :<NavLink to="/login" className="navbar-a font-22" exact activeClassName="active"> Log In</NavLink>
                             }
                         </li>

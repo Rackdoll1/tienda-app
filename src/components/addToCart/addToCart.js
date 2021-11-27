@@ -28,9 +28,9 @@ const AddToCart = ( {item} ) => {
   return (
     <>
       { !user ?
-        <button type="button" className="cardButton">Please login</button>
+        <button type="button" className="button button--card">Please login</button>
         :
-        <button type="button" className="cardButton" id={item.id} onClick={handleButton}>Add to cart</button>
+        <button type="button" className="button button--card" id={item.id} onClick={handleButton}>Add to cart</button>
       }
     </>
   )

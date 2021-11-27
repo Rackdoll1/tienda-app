@@ -1,35 +1,46 @@
-.details{display: flex;
-    width: 100vw;
-    height: 100vh;
-    background-color: $terciary;
+@import "../moleculas/moleculas";
+
+.details{
+
+    display: flex;
+    justify-content: space-around;
+
+    width: 85%;
+    margin: 3rem auto;
 }
 
-.detailsImage{position: relative;
-    width: 40%;
-    height: 70%;
-    top: 5%;
-    left: 2%;
+.detailsImage {
+    width: 600px;
+    height: 600px;
+
     border-radius: 10px;
-    border: 10px $secondary solid;
-    box-shadow: 5px 5px 5px black;
+    border: 10px solid $terciary;
+
 }
-.info{position: relative;
-    top: 5%;
-    left: 5%;
+
+.info {
+    width: 35%;
     display: flex;
-    height: 70%;
-    width: 52%;
+    flex-direction: column;
     justify-content: space-around;
     border-radius: 20px;
-    flex-wrap: wrap;
-    background-color: $secondary;
 
-    .detailsProduct_name{
-        width: 100%;
-        text-align: center;
+    padding: 3rem;
+
+    background-color: white;
+    border: 10px solid $terciary;
+
+    h1 {
+      font-size: 3rem;
+      margin: 0;
     }
-    .detailsDescription{
-        width: 100%;
-        margin: 2rem;
+
+
+    h2 {
+      font-size: 2.5rem;
+    }
+
+    p {
+      font-size: 1.5rem;
     }
 }

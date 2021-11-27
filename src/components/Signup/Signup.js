@@ -7,10 +7,9 @@ import { fetchUserToken, signupUser } from "../../services/fetchToken";
 const Signup = () => {
 
   const history = useHistory();
-  const [user, setUser] = useContext(UserContext);
   const [json, setJson] = useState({});
   const [error, setError] = useState(false);
-
+  const [user, setUser] = useContext(UserContext);
 
 
   const handleInput = (e) => {
@@ -43,7 +42,7 @@ const Signup = () => {
 
   return (
         <>
-            <form onSubmit={handleSubmit} className="layer2">
+            <form onSubmit={handleSubmit} className="layer">
               <h1>Welcome!</h1>
                 <div className="form-group">
                     <label htmlFor="first_name"> Names(s):</label>

@@ -1,4 +1,5 @@
-.Cartcontainer{position: relative;
+.Cartcontainer{
+    position: relative;
     background-color: $secondary;
     padding-top:2%;
     padding-bottom: 2%;
@@ -30,24 +31,24 @@
         text-overflow: ellipsis;
     }
 
-    .Cartcardbuttons{
+    .Cartcardbuttons {
 
       margin-right: 3rem;
       width: 200px;
       display: flex;
       justify-content: space-around;
 
-      .CartcardButtonA{
+      .CartcardButtonA {
           border:none;
           border-radius: 5px;
           width: 35%;
           height: 50%;
-          background-color:rgb(232, 179, 77);
+          background-color: $cuaternary;
           box-shadow: 2px 2px 2px black;
           font-size: 25px;
 
           &:hover {
-            background-color: rgb(255, 168, 0);
+            background-color: $cuaternary-hover;
             cursor: pointer;
           }
 
@@ -57,7 +58,7 @@
           }
       }
 
-      .CartcardButtonB{
+      .CartcardButtonB {
           margin-right: 2%;
           border: none;
           border-radius: 5px;
@@ -81,7 +82,7 @@
 
 }
 
-.total{
+.total {
     display: flex;
     margin-top: 3.5%;
     margin-left: 80%;
@@ -100,10 +101,11 @@
 }
 
 .cart-login {
-  background-color: rgb(252, 252, 234);
+  color: $shadow;
+  background-color: $terciary;
   text-align: center;
   border-style: solid;
-  border-color: #92a8d1;
+  border-color: $primary;
   border-radius: 20px;
   box-sizing: border-box;
   width: 400px;

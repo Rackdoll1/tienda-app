@@ -1,79 +1,35 @@
 @import "../atomos/atomos.scss";
 
 .form-group{
+  margin-top: 10px;
   margin-bottom: 10px;
 }
-.layer1  {
-  background-color: rgb(252, 252, 234);
+.layer {
+  color: $shadow;
+  background-color: $terciary;
   border-style: solid;
-  border-color: #92a8d1;
+  border-color: $primary;
   border-radius: 20px;
   box-sizing: border-box;
-  height: 300px;
   padding: 20px;
   width: 300px;
   margin: 2rem auto;
   overflow: hidden;
 
-  h1{
+  h1 {
     font-size: 2rem;
     margin: 0;
   }
 
-  .email {
-      margin-top: 30px;
-  }
-
-  .password {
-      margin-top: 10px;
-  }
 }
 
 
-.layer2  {
-  background-color: rgb(252, 252, 234);
-  border-style: solid;
-  border-color: #92a8d1;
-  border-radius: 20px;
-  box-sizing: border-box;
-  height: 630px;
-  padding: 20px;
-  width: 300px;
-  margin: 2rem auto;
-  overflow: hidden;
-
-  h1{
-    font-size: 2rem;
-    margin: 0 0 1rem 0;
-  }
+.ex-textarea {
+  height: 4rem;
 }
-
-.layer3  {
-  background-color: rgb(252, 252, 234);
-  border-style: solid;
-  border-color: #92a8d1;
-  border-radius: 20px;
-  box-sizing: border-box;
-  height: 640px;
-  padding: 20px;
-  width: 300px;
-  margin: 2rem auto;
-  overflow: hidden;
-
-  h1{
-    font-size: 2rem;
-    margin: 0 0 1rem 0;
-  }
-
-  .ex-textarea {
-    height: 4rem;
-  }
-}
-
 
 
 .ex {
-  background-color: #d8dbf7;
   border-radius: 12px;
   border: 0;
   height: 30px;
@@ -87,22 +43,26 @@
 
 
 .submit {
-  background-color: rgb(187, 61, 61);
+  background-color: $cuaternary;
   box-shadow: 1px 1px 2px black;
-  border-radius: 12px;
-  border: 0;
-  box-sizing: border-box;
-  color: #eee;
+  border-radius: 20px;
+  border: none;
+
+
   cursor: pointer;
-  font-size: 18px;
-  height: 30px;
+  font-size: 16px;
+  height: 35px;
   margin-top: 15px;
   text-align: center;
   width: 100%;
 
   &:hover {
-    background-color: rgb(172, 44, 44);
+    background-color: $cuaternary-hover;
     box-shadow: 1px 1px 2px  rgba(0, 0, 0, 0.678);
+  }
+
+  &:active {
+    background-color: $cuaternary-active;
   }
 }
 
@@ -119,7 +79,7 @@
   width: 100%;
 
   &:hover {
-    background-color: rgb(230, 230, 230);
+    box-shadow: 0 0 3px $shadow;
   }
 }
 

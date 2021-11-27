@@ -10,9 +10,8 @@ function Login() {
 
     const history = useHistory();
     const [details, setDetails] = useState({});
-    const [user, setUser] = useContext(UserContext);
     const [error, setError] = useState(false);
-
+    const [user, setUser] = useContext(UserContext);
 
     const submitHandler = async e => {
         e.preventDefault();
@@ -38,7 +37,7 @@ function Login() {
 
     return (
       <>
-        <form className="layer1" onSubmit={submitHandler}>
+        <form className="layer" onSubmit={submitHandler}>
           <h1>Hi there! </h1>
             <div className="form-inner">
                 <div className="form-group email">

@@ -15,13 +15,13 @@ const ProductDetails = () => {
             <img src={productState?.image} className="detailsImage" alt={productState.product_name}></img>
             <div className="info">
               <h1 className="detailsProduct_name">{productState.product_name}</h1>
-              <h2 className="detailsDescription">{productState.description}</h2>
-              <h2 className="detailsPrice">Price: ${productState.price}</h2>
-              <h2 className="detailsBrand">Brand: {productState.brand}</h2>
-              <h2 className="detailsCategory">Category: {productState.category}</h2>
+              <h2 className="detailsPrice">${productState.price}</h2>
+              <p className="detailsDescription">{productState.description}</p>
+              <h3 className="detailsBrand">Brand: {productState.brand}</h3>
+              <h3 className="detailsCategory">Category: {productState.category}</h3>
             </div>
-          <AddToCart item={productState} />
         </div>
+        <AddToCart item={productState} />
     </>
 
   )
